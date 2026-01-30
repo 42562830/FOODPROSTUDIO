@@ -46,6 +46,49 @@
       stroke: none !important;
     }
 
+  
+    /* HINT para carruseles (móvil): "Desliza" */
+    .carousel-hint{
+      position:absolute;
+      left:50%;
+      bottom:0.6rem;
+      transform:translateX(-50%);
+      z-index:30;
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      padding:0.45rem 0.8rem;
+      border-radius:9999px;
+      background:rgba(0,0,0,.65);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.92);
+      pointer-events:none;
+      transition:opacity .25s ease, transform .25s ease;
+      animation:hint-swipe 1.3s ease-in-out infinite;
+    }
+    @media (min-width: 768px){
+  .carousel-hint{
+    font-size:11px;
+    padding:0.55rem 1rem;
+    bottom:1rem;
+  }
+}
+    .carousel-hint.is-hidden{
+      opacity:0;
+      transform:translateX(-50%) translateY(8px);
+      animation:none;
+    }
+    @keyframes hint-swipe{
+      0%,100%{ transform:translateX(-50%) translateY(0); opacity:.95; }
+      50%{ transform:translateX(calc(-50% + 14px)) translateY(0); opacity:1; }
+    }
+
   </style>
 </head>
 
@@ -242,13 +285,14 @@
         </div>
       </div>
 
-      <div class="lg:col-span-10">
-        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+      <div class="lg:col-span-10 relative">
+        <div class="carousel-hint">Desliza o arrastra para ver los cambios <span class="material-symbols-outlined text-base leading-none">arrow_forward</span></div>
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar js-carousel">
           <!-- ANTES -->
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/01_la_caribeña/00_original.jpeg"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/01_la_caribeña/00_original.png"/>
             </div>
           </div>
 
@@ -311,12 +355,13 @@
         </div>
       </div>
 
-      <div class="lg:col-span-10">
-        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+      <div class="lg:col-span-10 relative">
+        <div class="carousel-hint">Desliza o arrastra para ver los cambios <span class="material-symbols-outlined text-base leading-none">arrow_forward</span></div>
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar js-carousel">
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/02_la_clasica/00_original.jpeg"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/02_la_clasica/00_original.png"/>
             </div>
           </div>
 
@@ -374,12 +419,13 @@
         </div>
       </div>
 
-      <div class="lg:col-span-10">
-        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+      <div class="lg:col-span-10 relative">
+        <div class="carousel-hint">Desliza o arrastra para ver los cambios <span class="material-symbols-outlined text-base leading-none">arrow_forward</span></div>
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar js-carousel">
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/03_salchipapa_caribeña/00_original.jpeg"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/03_salchipapa_caribeña/00_original.png"/>
             </div>
           </div>
 
@@ -446,12 +492,13 @@
         </div>
       </div>
 
-      <div class="lg:col-span-10">
-        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+      <div class="lg:col-span-10 relative">
+        <div class="carousel-hint">Desliza o arrastra para ver los cambios <span class="material-symbols-outlined text-base leading-none">arrow_forward</span></div>
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar js-carousel">
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/04_hot_dog/00_original.jpeg"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/04_hot_dog/00_original.png"/>
             </div>
           </div>
 
@@ -707,7 +754,7 @@
       </div>
       <h2 class="text-white text-lg font-black tracking-tighter">FOOD PRO STUDIO</h2>
     </a>
-    <p class="text-gray-500 font-medium">© 2024 FOOD PRO STUDIO. Transforma tu delivery hoy.</p>
+    <p class="text-gray-500 font-medium">© 2026 FOOD PRO STUDIO. Transforma tu delivery hoy.</p>
     <div class="flex gap-8">
       <a class="text-gray-400 hover:text-primary transition-colors" href="#contacto"><span class="material-symbols-outlined text-3xl">chat</span></a>
       <a class="text-gray-400 hover:text-primary transition-colors" href="#galeria"><span class="material-symbols-outlined text-3xl">photo_camera</span></a>
@@ -766,6 +813,31 @@
   // Inicialización
   resizeBeforeImage();
   updateSlider(50); // Empezar al 50%
+
+  // HINT para carruseles (móvil): se oculta al primer gesto/scroll
+  document.querySelectorAll(".js-carousel").forEach((carousel) => {
+    const hint = carousel.parentElement?.querySelector(".carousel-hint");
+    if (!hint) return;
+
+    const hide = () => hint.classList.add("is-hidden");
+
+    // Si ya está desplazado (por restauración), ocultar
+    if (carousel.scrollLeft > 10) hide();
+
+    carousel.addEventListener("scroll", () => {
+      if (carousel.scrollLeft > 10) hide();
+    }, { passive: true });
+
+    // Primer gesto
+    carousel.addEventListener("touchstart", hide, { passive: true, once: true });
+    carousel.addEventListener("pointerdown", hide, { passive: true, once: true });
+
+    // Por si molesta, se apaga solo a los 4s
+    setTimeout(() => {
+      if (carousel.scrollLeft <= 10) hide();
+    }, 4000);
+  });
+
 </script>
 
 </body>
