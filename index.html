@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>FOOD PRO STUDIO | Contenido Premium para Restaurantes</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FF007F",
+            "primary-pastel": "#FFE5F1",
+            "background-dark": "#0A0A0A",
+            "card-dark": "#161616",
+            "border-dark": "#2a2a2a"
+          },
+          fontFamily: {
+            "display": ["Be Vietnam Pro", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base { body { @apply font-display bg-background-dark text-white overflow-x-hidden; font-size: 15px; } }
+    .glass-nav { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .hero-gradient { background: linear-gradient(to bottom, #FFE5F1 0%, #FFE5F1 150px, #0A0A0A 400px, #0A0A0A 100%); }
+    /* LOGO SVG (tint via currentColor) */
+    .logo-svg .cls-1,
+    .logo-svg .cls-2,
+    .logo-svg .cls-3 {
+      fill: currentColor !important;
+      stroke: none !important;
+    }
+
+  </style>
+</head>
+
+<body class="bg-background-dark">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/5">
+  <div class="max-w-[1400px] mx-auto px-8 h-16 flex items-center justify-between">
+    <a href="#portada" class="flex items-center gap-3">
+      <div class="size-8 rounded-lg flex items-center justify-center">
+        <svg class="logo-svg size-6 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.37 506.61"><defs><style>.cls-1{fill:#e5087e;}.cls-1,.cls-2{stroke:#000;stroke-miterlimit:10;stroke-width:0.25px;}.cls-2,.cls-3{fill:#fff;}</style></defs><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path class="cls-1" d="M237.21,143.4q-55.71,0-111.42,0-52.33,0-104.67-.09c-10.53,0-11.46-1.38-9.55-11.87C15.78,108.19,28.65,89.87,44,72.71,64.53,49.61,90.83,35,118.61,23,147.14,10.61,177.43,4.62,208.3,1.69c45.48-4.31,90.08.14,133.31,15.12,24.31,8.43,47.53,19.37,68,35.33,15.61,12.18,29.47,26,40.24,42.83a106.35,106.35,0,0,1,15.42,40.92c.78,4.82-.49,6.34-5.26,7.14a24.31,24.31,0,0,1-3.72.25q-38.15.12-76.27.2-66.91.09-133.84.12h-9Z"/><path class="cls-2" d="M129.8,67.55c5.75-1.34,12.07-3.1,16.35-8.42,1.34-1.67,2.44-5,1.64-6.53s-4.11-2.68-6.3-2.64c-7.56.14-13.18,4.12-17,10.49C122,64.62,124.2,67.72,129.8,67.55Z"/><path class="cls-1" d="M290.14,85.23c-5.13.13-7.25,3.35-4.7,7.89,3.58,6.39,9.55,9.95,16.49,11.59,3.61.84,5.9-2.2,5.19-6.06C306,92.41,296.69,85.08,290.14,85.23Z"/><path class="cls-1" d="M192.11,90.72c-.13-4.29-1.87-5.66-5.63-5.58-6.14.14-15.24,7.07-17,12.94-1.39,4.67,1.18,7.78,5.71,6.44,5.53-1.64,10.75-4.11,14.31-8.94A31.39,31.39,0,0,0,192.11,90.72Z"/><path class="cls-1" d="M238.9,50.8c3.8-1.41,7.65-2.35,11-4.22,3-1.69,2.83-4.5.34-6.72-4.78-4.25-16.36-4.86-21.8-1.15-3.68,2.5-4,6-.13,8.21C231.37,48.7,235.05,49.44,238.9,50.8Z"/><path class="cls-1" d="M348,67.16c1-.53,3.42-1,4.16-2.39s.31-4-.58-5.42c-3.6-5.9-9.3-8.73-16-9.58-2.56-.33-5.6.08-6.13,2.87a8.7,8.7,0,0,0,1.89,6.59C335.43,63.78,341.05,65.88,348,67.16Z"/><path class="cls-1" d="M239.16,359.23H459c12.83-.49,14.79,3.7,9.5,15.51a61.62,61.62,0,0,1-14.75,20.5A168.59,168.59,0,0,1,422.39,418c-33,18.52-65.9,37.23-99,55.64-15,8.35-29.93,16.92-45.51,24.06-27.46,12.6-55.38,11.2-82.39-1.42-15.75-7.36-30.67-16.53-45.9-25-29.81-16.57-59.38-33.6-89.46-49.69-14.42-7.72-27.86-16.41-39.26-28.15C14.59,387,9.29,379.74,6.46,371s-.76-11.65,8.35-11.74c19.19-.21,38.39-.16,57.58-.16q83.39,0,166.77,0Z"/><path class="cls-1" d="M284.46,164.29h7.2c33.6-.07,67.21-.22,100.81-.16,21.15,0,42.31.36,63.47.55A19,19,0,0,1,470,170.59c5.16,5.38,7.55,11.69,4.76,19.12-3.24,8.64-9.89,13.07-18.76,13.63-8.43.54-16.93.16-25.39.16-33.37,0-66.75-.14-100.11.09-6.07,0-10.19-1.55-13.59-6.83a84.79,84.79,0,0,0-30.7-28.87,15.85,15.85,0,0,1-2.19-1.75C284.17,165.52,284.31,164.9,284.46,164.29Z"/><path class="cls-1" d="M194.83,340.33c-4,.4-6.3.84-8.64.84q-70.29,0-140.6-.09c-6.23,0-12.47.07-18.69-.13a66.89,66.89,0,0,1-11.13-1.14C5.41,337.68-.38,330.23.16,320.16c.51-9.48,7.8-16.87,18-17.64,7.2-.55,14.45-.61,21.68-.61,36.14,0,72.29.13,108.43.14,3.91,0,7.15.31,9.49,4.26,7.68,13,18.54,22.66,31.82,29.73C191,336.8,192.15,338.1,194.83,340.33Z"/><path class="cls-1" d="M193.48,166.07c-1.76,1.24-3.43,2.62-5.28,3.69a84.56,84.56,0,0,0-29,27.46c-3.12,4.8-6.89,6.38-12.4,6.34-36.36-.22-72.72-.21-109.08-.25-6,0-12,.44-17.92.08-14.06-.87-22-12.39-18-25.6C4.18,170,9.71,166,17.55,164.94a64.12,64.12,0,0,1,8.21-.3q57.51,0,115,0c14.94,0,29.88-.33,44.82-.46,2.45,0,4.89.22,7.34.34Z"/><path class="cls-1" d="M283.13,339c1.79-1.2,3.49-2.57,5.38-3.58,12.62-6.78,22.4-16.6,30-28.57,2.2-3.49,4.62-4.56,8.46-4.56q64.31.15,128.62.1c8.91,0,15.36,4.11,18.93,12.1,3.13,7,1.85,13.82-3.25,19.49-4.76,5.3-11.12,7.22-18.18,7.22q-39.26,0-78.53.07-41.5,0-83,0c-2.64,0-5.27-.26-7.9-.39Z"/><path class="cls-1" d="M140.06,233.14v38.49a32.1,32.1,0,0,1-5.18.78q-56.38.06-112.78,0a25.86,25.86,0,0,1-6.59-1c-10.9-3-16.32-10.47-15.18-20.68,1.11-9.95,8.5-16.75,19.34-17.09C34.1,233.19,48.54,233,63,233c21.16-.06,42.31.11,63.47.17C130.62,233.15,134.8,233.14,140.06,233.14Z"/><path class="cls-1" d="M336.45,272.12V234.54a10.88,10.88,0,0,1,3.24-1c39.33-.05,78.67-.3,118,.11,15.27.16,23.53,16.47,15.33,29.17-4.23,6.57-10.82,9.36-18.43,9.55-8,.21-15.94.08-23.9.09q-43.69,0-87.4.07C341.1,272.48,338.9,272.26,336.45,272.12Z"/><path class="cls-1" d="M316.35,210.6c2.17,5.08,4.16,9.26,5.77,13.59,7.77,20.8,6.18,41.35-1.62,61.8-1.63,4.25-3.83,6.21-8.67,6.09-13.16-.33-26.34-.12-39.51-.16-1.45,0-2.9-.27-5.4-.52a63.88,63.88,0,0,1,3.1-7q21.06-34.69,42.28-69.3C313.14,213.76,314.47,212.68,316.35,210.6Z"/><path class="cls-1" d="M285,246.68c-16.27-27.46-32-53.18-46.7-80.41,7.11-2.28,13.26-.55,19,.7,21.23,4.63,38.07,16.47,51.56,33.3,1.61,2,2.94,4,1.26,6.7C302.05,219.75,294,232.53,285,246.68Z"/><path class="cls-1" d="M236.89,339.76c-30.5-1.44-53.74-14.59-72-38.76l25.21-42.12C195.29,262.94,234.37,330.68,236.89,339.76Z"/><path class="cls-1" d="M209.09,214.28c-15.51,27.21-31.17,53.49-47.71,80.41-1.68-2.24-2.77-3.25-3.33-4.5-10.65-23.67-11.37-47.56-1.44-71.65,1.3-3.14,2.95-5.63,7-5.6,13.69.1,27.38,0,41.07.11C205.78,213.05,206.9,213.65,209.09,214.28Z"/><path class="cls-1" d="M313.33,298.55c-2.63,3.75-4.2,6.83-6.53,9.18-9.47,9.54-19.22,19-31.86,24.12-7.74,3.16-16.08,4.88-24.24,6.89a6.39,6.39,0,0,1-5.07-1.68c-4.28-4.36-19.74-32.05-21.78-38.51Z"/><path class="cls-1" d="M164.56,206c1.88-2.84,3.05-5,4.56-6.84,13.47-16.53,30-28.17,51.36-32.21,8.12-1.54,8.87-1.37,13.23,5.87,5.78,9.59,11.39,19.28,17,28.95a26.56,26.56,0,0,1,1.4,3.33C247.43,206.92,177.83,207.72,164.56,206Z"/><path class="cls-2" d="M290.14,85.23c6.55-.15,15.83,7.18,17,13.42.71,3.86-1.58,6.9-5.19,6.06-6.94-1.64-12.91-5.2-16.49-11.59C282.89,88.58,285,85.36,290.14,85.23Z"/><path class="cls-2" d="M192.11,90.72a31.39,31.39,0,0,1-2.6,4.86c-3.56,4.83-8.78,7.3-14.31,8.94-4.53,1.34-7.1-1.77-5.71-6.44,1.75-5.87,10.85-12.8,17-12.94C190.24,85.06,192,86.43,192.11,90.72Z"/><path class="cls-2" d="M238.9,50.8c-3.85-1.36-7.53-2.1-10.62-3.88-3.84-2.2-3.55-5.71.13-8.21,5.44-3.71,17-3.1,21.8,1.15,2.49,2.22,2.65,5-.34,6.72C246.55,48.45,242.7,49.39,238.9,50.8Z"/><path class="cls-3" d="M348,67.16c-6.92-1.28-12.54-3.38-16.67-7.93a8.7,8.7,0,0,1-1.89-6.59c.53-2.79,3.57-3.2,6.13-2.87,6.71.85,12.41,3.68,16,9.58.89,1.46,1.3,4.06.58,5.42S349,66.63,348,67.16Z"/></g></g></svg>
+      </div>
+      <h2 class="text-white text-lg font-black tracking-tighter">FOOD PRO STUDIO</h2>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10">
+      <a class="text-xs font-semibold hover:text-primary transition-colors" href="#que-incluye">Qué incluye</a>
+      <a class="text-xs font-semibold hover:text-primary transition-colors" href="#resultados">Resultados</a>
+      <a class="text-xs font-semibold hover:text-primary transition-colors" href="#galeria">Galería</a>
+      <a class="text-xs font-semibold hover:text-primary transition-colors" href="#como-funciona">Cómo funciona</a>
+      <a class="text-xs font-semibold hover:text-primary transition-colors" href="#precios">Packs</a>
+      <a class="text-xs font-semibold hover:text-primary transition-colors" href="#dudas">Dudas</a>
+      <a class="text-xs font-semibold hover:text-primary transition-colors" href="#contacto">Contacto</a>
+      <a href="#precios" class="bg-primary text-white px-6 py-2 rounded-full text-xs font-bold hover:brightness-110 transition-all shadow-lg shadow-primary/20">
+        Ver Packs
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="portada" class="hero-gradient min-h-screen pt-20">
+  <div class="max-w-[1400px] mx-auto px-8 pt-12 flex flex-col items-center">
+    <div class="mb-24 flex flex-col items-center">
+      <div class="size-20 rounded-2xl flex items-center justify-center shadow-xl mb-4">
+        <svg class="logo-svg size-14 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.37 506.61"><defs><style>.cls-1{fill:#e5087e;}.cls-1,.cls-2{stroke:#000;stroke-miterlimit:10;stroke-width:0.25px;}.cls-2,.cls-3{fill:#fff;}</style></defs><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path class="cls-1" d="M237.21,143.4q-55.71,0-111.42,0-52.33,0-104.67-.09c-10.53,0-11.46-1.38-9.55-11.87C15.78,108.19,28.65,89.87,44,72.71,64.53,49.61,90.83,35,118.61,23,147.14,10.61,177.43,4.62,208.3,1.69c45.48-4.31,90.08.14,133.31,15.12,24.31,8.43,47.53,19.37,68,35.33,15.61,12.18,29.47,26,40.24,42.83a106.35,106.35,0,0,1,15.42,40.92c.78,4.82-.49,6.34-5.26,7.14a24.31,24.31,0,0,1-3.72.25q-38.15.12-76.27.2-66.91.09-133.84.12h-9Z"/><path class="cls-2" d="M129.8,67.55c5.75-1.34,12.07-3.1,16.35-8.42,1.34-1.67,2.44-5,1.64-6.53s-4.11-2.68-6.3-2.64c-7.56.14-13.18,4.12-17,10.49C122,64.62,124.2,67.72,129.8,67.55Z"/><path class="cls-1" d="M290.14,85.23c-5.13.13-7.25,3.35-4.7,7.89,3.58,6.39,9.55,9.95,16.49,11.59,3.61.84,5.9-2.2,5.19-6.06C306,92.41,296.69,85.08,290.14,85.23Z"/><path class="cls-1" d="M192.11,90.72c-.13-4.29-1.87-5.66-5.63-5.58-6.14.14-15.24,7.07-17,12.94-1.39,4.67,1.18,7.78,5.71,6.44,5.53-1.64,10.75-4.11,14.31-8.94A31.39,31.39,0,0,0,192.11,90.72Z"/><path class="cls-1" d="M238.9,50.8c3.8-1.41,7.65-2.35,11-4.22,3-1.69,2.83-4.5.34-6.72-4.78-4.25-16.36-4.86-21.8-1.15-3.68,2.5-4,6-.13,8.21C231.37,48.7,235.05,49.44,238.9,50.8Z"/><path class="cls-1" d="M348,67.16c1-.53,3.42-1,4.16-2.39s.31-4-.58-5.42c-3.6-5.9-9.3-8.73-16-9.58-2.56-.33-5.6.08-6.13,2.87a8.7,8.7,0,0,0,1.89,6.59C335.43,63.78,341.05,65.88,348,67.16Z"/><path class="cls-1" d="M239.16,359.23H459c12.83-.49,14.79,3.7,9.5,15.51a61.62,61.62,0,0,1-14.75,20.5A168.59,168.59,0,0,1,422.39,418c-33,18.52-65.9,37.23-99,55.64-15,8.35-29.93,16.92-45.51,24.06-27.46,12.6-55.38,11.2-82.39-1.42-15.75-7.36-30.67-16.53-45.9-25-29.81-16.57-59.38-33.6-89.46-49.69-14.42-7.72-27.86-16.41-39.26-28.15C14.59,387,9.29,379.74,6.46,371s-.76-11.65,8.35-11.74c19.19-.21,38.39-.16,57.58-.16q83.39,0,166.77,0Z"/><path class="cls-1" d="M284.46,164.29h7.2c33.6-.07,67.21-.22,100.81-.16,21.15,0,42.31.36,63.47.55A19,19,0,0,1,470,170.59c5.16,5.38,7.55,11.69,4.76,19.12-3.24,8.64-9.89,13.07-18.76,13.63-8.43.54-16.93.16-25.39.16-33.37,0-66.75-.14-100.11.09-6.07,0-10.19-1.55-13.59-6.83a84.79,84.79,0,0,0-30.7-28.87,15.85,15.85,0,0,1-2.19-1.75C284.17,165.52,284.31,164.9,284.46,164.29Z"/><path class="cls-1" d="M194.83,340.33c-4,.4-6.3.84-8.64.84q-70.29,0-140.6-.09c-6.23,0-12.47.07-18.69-.13a66.89,66.89,0,0,1-11.13-1.14C5.41,337.68-.38,330.23.16,320.16c.51-9.48,7.8-16.87,18-17.64,7.2-.55,14.45-.61,21.68-.61,36.14,0,72.29.13,108.43.14,3.91,0,7.15.31,9.49,4.26,7.68,13,18.54,22.66,31.82,29.73C191,336.8,192.15,338.1,194.83,340.33Z"/><path class="cls-1" d="M193.48,166.07c-1.76,1.24-3.43,2.62-5.28,3.69a84.56,84.56,0,0,0-29,27.46c-3.12,4.8-6.89,6.38-12.4,6.34-36.36-.22-72.72-.21-109.08-.25-6,0-12,.44-17.92.08-14.06-.87-22-12.39-18-25.6C4.18,170,9.71,166,17.55,164.94a64.12,64.12,0,0,1,8.21-.3q57.51,0,115,0c14.94,0,29.88-.33,44.82-.46,2.45,0,4.89.22,7.34.34Z"/><path class="cls-1" d="M283.13,339c1.79-1.2,3.49-2.57,5.38-3.58,12.62-6.78,22.4-16.6,30-28.57,2.2-3.49,4.62-4.56,8.46-4.56q64.31.15,128.62.1c8.91,0,15.36,4.11,18.93,12.1,3.13,7,1.85,13.82-3.25,19.49-4.76,5.3-11.12,7.22-18.18,7.22q-39.26,0-78.53.07-41.5,0-83,0c-2.64,0-5.27-.26-7.9-.39Z"/><path class="cls-1" d="M140.06,233.14v38.49a32.1,32.1,0,0,1-5.18.78q-56.38.06-112.78,0a25.86,25.86,0,0,1-6.59-1c-10.9-3-16.32-10.47-15.18-20.68,1.11-9.95,8.5-16.75,19.34-17.09C34.1,233.19,48.54,233,63,233c21.16-.06,42.31.11,63.47.17C130.62,233.15,134.8,233.14,140.06,233.14Z"/><path class="cls-1" d="M336.45,272.12V234.54a10.88,10.88,0,0,1,3.24-1c39.33-.05,78.67-.3,118,.11,15.27.16,23.53,16.47,15.33,29.17-4.23,6.57-10.82,9.36-18.43,9.55-8,.21-15.94.08-23.9.09q-43.69,0-87.4.07C341.1,272.48,338.9,272.26,336.45,272.12Z"/><path class="cls-1" d="M316.35,210.6c2.17,5.08,4.16,9.26,5.77,13.59,7.77,20.8,6.18,41.35-1.62,61.8-1.63,4.25-3.83,6.21-8.67,6.09-13.16-.33-26.34-.12-39.51-.16-1.45,0-2.9-.27-5.4-.52a63.88,63.88,0,0,1,3.1-7q21.06-34.69,42.28-69.3C313.14,213.76,314.47,212.68,316.35,210.6Z"/><path class="cls-1" d="M285,246.68c-16.27-27.46-32-53.18-46.7-80.41,7.11-2.28,13.26-.55,19,.7,21.23,4.63,38.07,16.47,51.56,33.3,1.61,2,2.94,4,1.26,6.7C302.05,219.75,294,232.53,285,246.68Z"/><path class="cls-1" d="M236.89,339.76c-30.5-1.44-53.74-14.59-72-38.76l25.21-42.12C195.29,262.94,234.37,330.68,236.89,339.76Z"/><path class="cls-1" d="M209.09,214.28c-15.51,27.21-31.17,53.49-47.71,80.41-1.68-2.24-2.77-3.25-3.33-4.5-10.65-23.67-11.37-47.56-1.44-71.65,1.3-3.14,2.95-5.63,7-5.6,13.69.1,27.38,0,41.07.11C205.78,213.05,206.9,213.65,209.09,214.28Z"/><path class="cls-1" d="M313.33,298.55c-2.63,3.75-4.2,6.83-6.53,9.18-9.47,9.54-19.22,19-31.86,24.12-7.74,3.16-16.08,4.88-24.24,6.89a6.39,6.39,0,0,1-5.07-1.68c-4.28-4.36-19.74-32.05-21.78-38.51Z"/><path class="cls-1" d="M164.56,206c1.88-2.84,3.05-5,4.56-6.84,13.47-16.53,30-28.17,51.36-32.21,8.12-1.54,8.87-1.37,13.23,5.87,5.78,9.59,11.39,19.28,17,28.95a26.56,26.56,0,0,1,1.4,3.33C247.43,206.92,177.83,207.72,164.56,206Z"/><path class="cls-2" d="M290.14,85.23c6.55-.15,15.83,7.18,17,13.42.71,3.86-1.58,6.9-5.19,6.06-6.94-1.64-12.91-5.2-16.49-11.59C282.89,88.58,285,85.36,290.14,85.23Z"/><path class="cls-2" d="M192.11,90.72a31.39,31.39,0,0,1-2.6,4.86c-3.56,4.83-8.78,7.3-14.31,8.94-4.53,1.34-7.1-1.77-5.71-6.44,1.75-5.87,10.85-12.8,17-12.94C190.24,85.06,192,86.43,192.11,90.72Z"/><path class="cls-2" d="M238.9,50.8c-3.85-1.36-7.53-2.1-10.62-3.88-3.84-2.2-3.55-5.71.13-8.21,5.44-3.71,17-3.1,21.8,1.15,2.49,2.22,2.65,5-.34,6.72C246.55,48.45,242.7,49.39,238.9,50.8Z"/><path class="cls-3" d="M348,67.16c-6.92-1.28-12.54-3.38-16.67-7.93a8.7,8.7,0,0,1-1.89-6.59c.53-2.79,3.57-3.2,6.13-2.87,6.71.85,12.41,3.68,16,9.58.89,1.46,1.3,4.06.58,5.42S349,66.63,348,67.16Z"/></g></g></svg>
+      </div>
+      <span class="text-primary font-black text-2xl tracking-tighter">FOOD PRO STUDIO</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+      <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-6">
+          <h1 class="text-white text-5xl lg:text-7xl font-black leading-none tracking-tight">
+            FOTOS Y VÍDEOS DE COMIDA QUE ABREN EL <span class="text-primary">APETITO</span>
+          </h1>
+          <p class="text-primary text-xl font-medium max-w-xl">
+            Convierte tu foto de móvil en contenido premium listo para Instagram.
+          </p>
+          <p class="text-white/70 text-base font-medium max-w-xl">
+            Foto PRO + despiece + vídeo vertical
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-5">
+          <a href="#precios" class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-16 px-10 bg-primary text-white text-lg font-black hover:scale-105 transition-transform shadow-xl shadow-primary/30">
+            Ver Packs
+          </a>
+          <a href="#resultados" class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-16 px-10 bg-white/5 border border-white/10 text-white text-lg font-black hover:bg-white/10 transition-colors">
+            Resultados
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="absolute inset-0 bg-primary/20 blur-[120px] rounded-full"></div>
+        <div class="relative aspect-[4/5] max-w-[520px] w-full bg-center bg-cover rounded-3xl border border-white/10 shadow-2xl overflow-hidden"
+             style='background-image: url("images_caribe_fast_food/01_la_caribeña/02_Foto_PRO.jpg");'>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section class="py-32 px-8 max-w-[1400px] mx-auto" id="que-incluye">
+  <div class="text-center mb-20">
+    <h2 class="text-white text-4xl lg:text-5xl font-black tracking-tight mb-6 uppercase">¿QUÉ INCLUYE FOOD PRO STUDIO?</h2>
+    <p class="text-gray-400 text-xl max-w-3xl mx-auto">Convierte tu plato en una imagen tipo anuncio, perfecta para carta, Glovo y redes.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="flex flex-col gap-6 rounded-2xl border border-white/5 bg-card-dark p-10 hover:border-primary/50 transition-all hover:-translate-y-2">
+      <span class="material-symbols-outlined text-primary text-5xl">photo_camera</span>
+      <div class="flex flex-col gap-3">
+        <h3 class="text-white text-2xl font-black">FOTO PRO</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">Imagen premium, iluminación de estudio y retoque para vender más en Glovo.</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-6 rounded-2xl border border-white/5 bg-card-dark p-10 hover:border-primary/50 transition-all hover:-translate-y-2">
+      <span class="material-symbols-outlined text-primary text-5xl">layers</span>
+      <div class="flex flex-col gap-3">
+        <h3 class="text-white text-2xl font-black">DESPIECE</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">Ingredientes flotando estilo anuncio de TV.</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-6 rounded-2xl border border-white/5 bg-card-dark p-10 hover:border-primary/50 transition-all hover:-translate-y-2">
+      <span class="material-symbols-outlined text-primary text-5xl">videocam</span>
+      <div class="flex flex-col gap-3">
+        <h3 class="text-white text-2xl font-black">VIDEO 9:16</h3>
+        <p class="text-gray-400 text-lg leading-relaxed">Stories &amp; Reels. Vídeo vertical animado listo para subir a Instagram.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-gray-500 text-sm mt-10 text-center font-bold">*Todo requiere lista de ingredientes</p>
+</section>
+
+<!-- RESULTADOS REALES (slider) -->
+<!-- Se ha reducido el padding vertical (py-12) para ajustar mejor al navegador sin scroll excesivo -->
+<section class="py-12 bg-white/[0.02] border-y border-white/5" id="resultados">
+  <div class="max-w-[1400px] mx-auto px-8 w-full">
+    <!-- Texto más compacto para ganar espacio -->
+    <div class="flex flex-col gap-2 mb-8 text-center">
+      <h2 class="text-white text-4xl lg:text-5xl font-black tracking-tight uppercase">RESULTADOS REALES</h2>
+      <p class="text-white text-2xl font-black">Misma comida. Mejor imagen.</p>
+      <p class="text-primary text-xl font-bold">Más ganas de comprar</p>
+      <p class="text-gray-500 font-medium text-sm">Desliza para ver la magia.</p>
+    </div>
+
+    <!-- BEFORE / AFTER CONTAINER -->
+    <!-- Ajustado a max-w-[500px] para ser más estrecho y aspect-[4/5] para formato vertical -->
+    <div id="comparison-container" class="relative w-full max-w-[500px] mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-card-dark aspect-[4/5]">
+      <div class="relative w-full h-full group">
+        
+        <!-- 1. After (PRO) - Fondo - IMAGEN CORREGIDA: despues.jpg -->
+        <img src="images_caribe_fast_food/00_antes_despues/despues.jpg" 
+             class="absolute inset-0 w-full h-full object-cover" 
+             alt="Después"
+             draggable="false">
+
+        <!-- 2. Before (Móvil) - Recorte - IMAGEN CORREGIDA: antes.jpg -->
+        <!-- El ancho (width) de este div se controla con JS -->
+        <div id="beforeWrap" class="absolute inset-0 overflow-hidden border-r-[3px] border-white/70 z-10" style="width: 50%;">
+          <!-- Importante: max-w-none asegura que la imagen no se encoja al reducir el div -->
+          <img id="beforeImage" 
+               src="images_caribe_fast_food/00_antes_despues/antes.jpg" 
+               class="absolute top-0 left-0 h-full max-w-none object-cover" 
+               alt="Antes"
+               draggable="false">
+        </div>
+
+        <!-- 3. Handle (Botón central) -->
+        <div id="handle" class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-30 pointer-events-none" style="left: 50%;">
+          <div class="size-12 bg-white text-primary rounded-full flex items-center justify-center shadow-2xl border-4 border-primary">
+            <span class="material-symbols-outlined text-2xl font-black">unfold_more_double</span>
+          </div>
+        </div>
+
+        <!-- Labels (Flotantes) -->
+        <span class="absolute top-4 left-4 z-20 bg-black/70 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest pointer-events-none">
+          ANTES
+        </span>
+        <span class="absolute top-4 right-4 z-20 bg-primary px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-primary/40 pointer-events-none">
+          DESPUÉS
+        </span>
+
+        <!-- 4. Input Range INVISIBLE (Capa superior para interacción táctil sobre la imagen) -->
+        <input id="slider-overlay" type="range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-40">
+      </div>
+    </div>
+    
+    <!-- Barra inferior opcional para control manual, ajustada en anchura -->
+    <div class="max-w-[500px] mx-auto mt-4 px-4">
+       <input id="slider-bottom" type="range" min="0" max="100" value="50" class="w-full accent-pink-500 cursor-pointer h-1 bg-white/20 rounded-lg appearance-none"/>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERÍA COMPLETA (antes de Cómo funciona) -->
+<section class="py-32 px-8 max-w-[1400px] mx-auto overflow-hidden" id="galeria">
+  <div class="text-center mb-16">
+    <p class="text-primary font-black uppercase tracking-[0.3em] text-sm mb-4">Galería completa</p>
+    <h2 class="text-white text-5xl font-black tracking-tight uppercase">Ejemplos reales para que alucines</h2>
+    <p class="text-gray-500 mt-4 font-medium">Cada producto en su espacio, sin mezclar.</p>
+  </div>
+
+  <!-- BLOCK TEMPLATE: CLIENTE + PRODUCTO -->
+  <!-- Logo (izquierda) + carrusel (derecha) -->
+
+  <!-- 01 LA CARIBEÑA -->
+  <div class="mb-24">
+    <div class="flex flex-col gap-3 mb-10">
+      <h3 class="text-white text-5xl font-black uppercase">CLIENTE CARIBE FAST FOOD</h3>
+      <p class="text-primary font-black uppercase tracking-[0.25em] text-sm">LA CARIBEÑA</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <div class="w-full aspect-square rounded-2xl bg-card-dark border border-white/10 overflow-hidden flex items-center justify-center">
+          <img src="images_caribe_fast_food/logo%20caribe/Logo_Caribe.png" alt="Logo Caribe" class="w-full h-full object-contain p-6"/>
+        </div>
+      </div>
+
+      <div class="lg:col-span-10">
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+          <!-- ANTES -->
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/01_la_caribeña/00_original.jpeg"/>
+            </div>
+          </div>
+
+          <!-- FOTO PRO CON TÍTULO -->
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO CON TÍTULO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro con Título" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/01_Foto_PRO_nombre.jpg"/>
+            </div>
+          </div>
+
+          <!-- FOTO PRO -->
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/02_Foto_PRO.jpg"/>
+            </div>
+          </div>
+
+          <!-- DESPIECE -->
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/03_despiece_caribeña.jpg"/>
+            </div>
+          </div>
+
+          <!-- DESPIECE CON TEXTO -->
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE CON TEXTO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece con texto" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/04_despiece_texto.jpg"/>
+            </div>
+          </div>
+
+          <!-- VÍDEO 9:16 -->
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">VÍDEO 9:16</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
+                     src="images_caribe_fast_food/01_la_caribeña/05_Vídeo.mov"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 LA CLÁSICA -->
+  <div class="mb-24">
+    <div class="flex flex-col gap-3 mb-10">
+      <h3 class="text-white text-5xl font-black uppercase">CLIENTE CARIBE FAST FOOD</h3>
+      <p class="text-primary font-black uppercase tracking-[0.25em] text-sm">LA CLÁSICA</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <div class="w-full aspect-square rounded-2xl bg-card-dark border border-white/10 overflow-hidden flex items-center justify-center">
+          <img src="images_caribe_fast_food/logo%20caribe/Logo_Caribe.png" alt="Logo Caribe" class="w-full h-full object-contain p-6"/>
+        </div>
+      </div>
+
+      <div class="lg:col-span-10">
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/02_la_clasica/00_original.jpeg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO CON TÍTULO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro con Título" class="w-full h-full object-cover" src="images_caribe_fast_food/02_la_clasica/01_Foto_PRO_nombre.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro" class="w-full h-full object-cover" src="images_caribe_fast_food/02_la_clasica/02_Foto_PRO.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece" class="w-full h-full object-cover" src="images_caribe_fast_food/02_la_clasica/03_despiece_clasica.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE CON TEXTO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece con texto" class="w-full h-full object-cover" src="images_caribe_fast_food/02_la_clasica/04_despiece_texto.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">VÍDEO 9:16</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
+                     src="images_caribe_fast_food/02_la_clasica/05_Vídeo.mov"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 SALCHIPAPA CARIBEÑA -->
+  <div class="mb-24">
+    <div class="flex flex-col gap-3 mb-10">
+      <h3 class="text-white text-5xl font-black uppercase">CLIENTE CARIBE FAST FOOD</h3>
+      <p class="text-primary font-black uppercase tracking-[0.25em] text-sm">SALCHIPAPA CARIBEÑA</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <div class="w-full aspect-square rounded-2xl bg-card-dark border border-white/10 overflow-hidden flex items-center justify-center">
+          <img src="images_caribe_fast_food/logo%20caribe/Logo_Caribe.png" alt="Logo Caribe" class="w-full h-full object-contain p-6"/>
+        </div>
+      </div>
+
+      <div class="lg:col-span-10">
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/03_salchipapa_caribeña/00_original.jpeg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO CON TÍTULO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro con Título" class="w-full h-full object-cover" src="images_caribe_fast_food/03_salchipapa_caribeña/01_Foto_PRO_nombre.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro" class="w-full h-full object-cover" src="images_caribe_fast_food/03_salchipapa_caribeña/02_Foto_PRO.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece" class="w-full h-full object-cover" src="images_caribe_fast_food/03_salchipapa_caribeña/03_despiece_salchipapa.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE CON TEXTO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece con texto" class="w-full h-full object-cover" src="images_caribe_fast_food/03_salchipapa_caribeña/04_despiece_texto.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">VÍDEO 9:16</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
+                     src="images_caribe_fast_food/03_salchipapa_caribeña/05_Vídeo.mp4"></video>
+            </div>
+          </div>
+
+          <!-- Extras (vídeos recurso) - no pedidos como "VÍDEO 9:16", así que los ponemos como "RECURSO" -->
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">VÍDEO RECURSO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border border-white/10">
+              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
+                     src="images_caribe_fast_food/03_salchipapa_caribeña/06_Vídeo_de_recurso_o_extra.mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 HOT DOG -->
+  <div class="mb-10">
+    <div class="flex flex-col gap-3 mb-10">
+      <h3 class="text-white text-5xl font-black uppercase">CLIENTE CARIBE FAST FOOD</h3>
+      <p class="text-primary font-black uppercase tracking-[0.25em] text-sm">HOT DOG</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <div class="w-full aspect-square rounded-2xl bg-card-dark border border-white/10 overflow-hidden flex items-center justify-center">
+          <img src="images_caribe_fast_food/logo%20caribe/Logo_Caribe.png" alt="Logo Caribe" class="w-full h-full object-contain p-6"/>
+        </div>
+      </div>
+
+      <div class="lg:col-span-10">
+        <div class="flex gap-8 overflow-x-auto pb-6 snap-x no-scrollbar">
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
+              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/04_hot_dog/00_original.jpeg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO CON TÍTULO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro con Título" class="w-full h-full object-cover" src="images_caribe_fast_food/04_hot_dog/01_Foto_PRO_nombre.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">FOTO PRO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Foto Pro" class="w-full h-full object-cover" src="images_caribe_fast_food/04_hot_dog/02_Foto_PRO.jpg"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece" class="w-full h-full object-cover" src="images_caribe_fast_food/04_hot_dog/03_despiece_hotdog.png"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">DESPIECE CON TEXTO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <img alt="Despiece con texto" class="w-full h-full object-cover" src="images_caribe_fast_food/04_hot_dog/04_despiece_texto.png"/>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-primary font-black text-xs uppercase tracking-widest text-center">VÍDEO 9:16</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border-2 border-primary/20">
+              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
+                     src="images_caribe_fast_food/04_hot_dog/05_Video.mp4"></video>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">VÍDEO RECURSO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border border-white/10">
+              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
+                     src="images_caribe_fast_food/04_hot_dog/06_Vídeo_de_recurso_o_extra.mp4"></video>
+            </div>
+          </div>
+
+          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
+            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">VÍDEO RECURSO</span>
+            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border border-white/10">
+              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
+                     src="images_caribe_fast_food/04_hot_dog/07_Vídeo_de_recurso_o_extra.mp4"></video>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="py-32 bg-card-dark" id="como-funciona">
+  <div class="max-w-[1400px] mx-auto px-8">
+    <h2 class="text-white text-5xl font-black mb-24 text-center uppercase">CÓMO FUNCIONA</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="group relative p-12 bg-background-dark rounded-[2.5rem] border border-white/5 flex flex-col gap-6 shadow-2xl">
+        <div class="size-16 rounded-2xl bg-primary flex items-center justify-center text-3xl font-black shadow-lg shadow-primary/30">1</div>
+        <div class="h-64 rounded-xl overflow-hidden mb-4 border border-white/10">
+          <img alt="Envías la foto" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/00_original.jpeg"/>
+        </div>
+        <h3 class="text-2xl font-black">Envías la foto</h3>
+        <p class="text-gray-400 text-lg">Hecha con tu móvil + lista de ingredientes escrita.</p>
+      </div>
+
+      <div class="group relative p-12 bg-background-dark rounded-[2.5rem] border border-white/5 flex flex-col gap-6 shadow-2xl">
+        <div class="size-16 rounded-2xl bg-primary flex items-center justify-center text-3xl font-black shadow-lg shadow-primary/30">2</div>
+        <div class="h-64 rounded-xl overflow-hidden mb-4 border border-white/10">
+          <img alt="Yo lo transformo" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/03_despiece_caribeña.jpg"/>
+        </div>
+        <h3 class="text-2xl font-black">Yo lo transformo</h3>
+        <p class="text-gray-400 text-lg">Creo la foto, el despiece y el vídeo.</p>
+      </div>
+
+      <div class="group relative p-12 bg-background-dark rounded-[2.5rem] border border-white/5 flex flex-col gap-6 shadow-2xl">
+        <div class="size-16 rounded-2xl bg-primary flex items-center justify-center text-3xl font-black shadow-lg shadow-primary/30">3</div>
+        <div class="h-64 rounded-xl overflow-hidden mb-4 border border-white/10">
+          <img alt="Lista para vender" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/02_Foto_PRO.jpg"/>
+        </div>
+        <h3 class="text-2xl font-black">Lista para vender</h3>
+        <p class="text-gray-400 text-lg">Te entrego todo listo para publicar en redes/Glovo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS Y PRECIOS -->
+<section class="py-32 px-8 max-w-[1400px] mx-auto" id="precios">
+  <div class="text-center mb-16">
+    <h2 class="text-white text-5xl font-black tracking-tight uppercase">PACKS Y PRECIOS</h2>
+    <p class="text-gray-400 mt-4 font-medium">Los precios son sin IVA.</p>
+    <p class="text-primary text-xl font-black mt-6">Invierte en imagen, recupera en pedidos.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+    <!-- packs -->
+    <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- STARTER -->
+      <div class="p-10 rounded-3xl bg-white/5 border border-white/10 flex flex-col gap-8 relative overflow-hidden">
+        <div>
+          <h4 class="text-gray-400 font-black text-sm uppercase tracking-widest mb-4">STARTER</h4>
+          <div class="text-5xl font-black text-white">49€</div>
+          <div class="text-gray-400 font-bold mt-3">Para probar el servicio (1 producto)</div>
+        </div>
+        <ul class="flex flex-col gap-4 text-gray-300">
+          <li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-primary">check_circle</span> 1 Foto PRO studio</li>
+          <li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-primary">check_circle</span> 1 Despiece creativo</li>
+          <li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-primary">check_circle</span> 1 Vídeo vertical 9:16</li>
+        </ul>
+        <button class="w-full py-4 rounded-full border border-white/20 text-white font-black hover:bg-white/5 transition-all mt-auto">Elegir Starter</button>
+      </div>
+
+      <!-- FOOD PRO STUDIO -->
+      <div class="p-10 rounded-[2.5rem] bg-primary relative flex flex-col gap-8 shadow-2xl shadow-primary/30 scale-105 z-10 border-4 border-white/20">
+        <div class="bg-white text-primary text-[10px] font-black px-4 py-1.5 rounded-full uppercase absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap">RECOMENDADO</div>
+        <div>
+          <h4 class="text-white/90 font-black text-sm uppercase tracking-widest mb-4">FOOD PRO STUDIO</h4>
+          <div class="text-5xl font-black text-white">299€</div>
+          <div class="text-white/60 line-through text-xl font-bold mt-1">390€</div>
+          <div class="text-white/90 font-bold mt-4">Pack completo (8 productos)</div>
+        </div>
+        <ul class="flex flex-col gap-4 text-white">
+          <li class="flex items-center gap-3 font-bold"><span class="material-symbols-outlined">check_circle</span> 8 Fotos PRO studio</li>
+          <li class="flex items-center gap-3 font-bold"><span class="material-symbols-outlined">check_circle</span> 8 Despieces creativos</li>
+          <li class="flex items-center gap-3 font-bold"><span class="material-symbols-outlined">check_circle</span> 8 Vídeos verticales 9:16</li>
+          <li class="flex items-center gap-3 font-bold"><span class="material-symbols-outlined">check_circle</span> Prioridad en entrega</li>
+        </ul>
+        <button class="w-full py-5 rounded-full bg-white text-primary font-black text-lg hover:scale-105 transition-transform shadow-xl mt-auto">Quiero el Pack Studio</button>
+      </div>
+
+      <!-- CARTA / GLOVO -->
+      <div class="p-10 rounded-3xl bg-white/5 border border-white/10 flex flex-col gap-8 relative overflow-hidden">
+        <div>
+          <h4 class="text-gray-400 font-black text-sm uppercase tracking-widest mb-4">CARTA/GLOVO</h4>
+          <div class="text-5xl font-black text-white">69€</div>
+          <div class="text-gray-400 font-bold mt-3">Actualizar delivery (5 productos)</div>
+        </div>
+        <ul class="flex flex-col gap-4 text-gray-300">
+          <li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-primary">check_circle</span> 5 Fotos PRO studio</li>
+          <li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-primary">check_circle</span> Optimizado delivery</li>
+          <li class="flex items-center gap-3 font-medium"><span class="material-symbols-outlined text-primary">check_circle</span> Formatos 1:1 + 9:16</li>
+        </ul>
+        <button class="w-full py-4 rounded-full border border-white/20 text-white font-black hover:bg-white/5 transition-all mt-auto">Elegir Carta</button>
+      </div>
+    </div>
+
+    <!-- extras -->
+    <div class="lg:col-span-4 bg-card-dark p-10 rounded-3xl border border-white/5 h-fit shadow-xl">
+      <h4 class="text-white text-2xl font-black mb-8 uppercase">Extras</h4>
+      <div class="space-y-6">
+        <div class="flex justify-between items-center pb-6 border-b border-white/5">
+          <span class="text-lg text-gray-400 font-medium">Título del plato</span>
+          <span class="text-primary font-black text-xl">20€</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-lg text-gray-400 font-medium">Despiece extra (con texto)</span>
+          <span class="text-primary font-black text-xl">20€</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUDAS FRECUENTES -->
+<section class="py-32 px-8 max-w-[900px] mx-auto" id="dudas">
+  <h2 class="text-white text-4xl lg:text-5xl font-black mb-16 text-center uppercase tracking-tight">Dudas frecuentes</h2>
+
+  <div class="space-y-6">
+    <details class="group bg-card-dark border border-white/5 rounded-2xl overflow-hidden transition-all duration-300" open>
+      <summary class="p-8 cursor-pointer flex justify-between items-center list-none font-black text-xl group-open:text-primary">
+        ¿Qué formatos entregas?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-3xl">expand_more</span>
+      </summary>
+      <div class="p-8 pt-0 text-gray-400 text-lg leading-relaxed border-t border-white/5">
+        <div>Vídeo en 9:16 (Stories/Reels)</div>
+        <div>La Foto PRO en 9:16 + 1:1</div>
+        <div>Despiece en 9:16</div>
+        <div class="mt-4">Si necesitas algún formato especial, dímelo y lo hablamos.</div>
+      </div>
+    </details>
+
+    <details class="group bg-card-dark border border-white/5 rounded-2xl overflow-hidden transition-all duration-300">
+      <summary class="p-8 cursor-pointer flex justify-between items-center list-none font-black text-xl group-open:text-primary">
+        Formas de pago
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-3xl">expand_more</span>
+      </summary>
+      <div class="p-8 pt-0 text-gray-400 text-lg leading-relaxed border-t border-white/5">
+        Transferencia o efectivo.
+      </div>
+    </details>
+
+    <details class="group bg-card-dark border border-white/5 rounded-2xl overflow-hidden transition-all duration-300">
+      <summary class="p-8 cursor-pointer flex justify-between items-center list-none font-black text-xl group-open:text-primary">
+        ¿Tiempo de entregas?
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-3xl">expand_more</span>
+      </summary>
+      <div class="p-8 pt-0 text-gray-400 text-lg leading-relaxed border-t border-white/5">
+        No doy fechas fijas en la web. Te confirmo el plazo de entrega cuando recibo las fotos, según mi carga de trabajo.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="py-20 px-8 mb-10" id="contacto">
+  <div class="max-w-[1200px] mx-auto bg-gradient-to-br from-primary to-[#FF0055] rounded-[2.5rem] p-10 lg:p-14 text-center relative overflow-hidden shadow-2xl shadow-primary/40">
+    <div class="absolute inset-0 opacity-10 pointer-events-none"
+         style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+
+    <div class="relative z-10 flex flex-col gap-7 items-center">
+      <h2 class="text-white text-6xl lg:text-7xl font-black tracking-tighter mb-4 leading-none">HABLEMOS!</h2>
+
+      <div class="bg-white/20 backdrop-blur-md rounded-2xl px-10 py-6 border border-white/20">
+        <p class="text-white text-2xl lg:text-3xl font-black italic">
+          Aprovecha la promo del PACK FOOD PRO STUDIO antes de que termine en 7 días y consigue contenido PRO que te hará vender más.
+        </p>
+      </div>
+
+      <a class="mt-2 bg-white text-primary px-12 py-5 rounded-full text-xl font-black shadow-2xl hover:scale-110 transition-all flex items-center gap-4 group"
+         href="https://wa.me/34614297072" target="_blank" rel="noopener">
+        <span class="material-symbols-outlined text-4xl group-hover:rotate-12 transition-transform">chat</span>
+        HABLAR POR WHATSAPP
+      </a>
+
+      <p class="text-white/90 font-bold">Te recomiendo el pack ideal para tu carta</p>
+
+      <div class="mt-10 pt-10 border-t border-white/20 flex flex-col items-center gap-4 w-full">
+        <div class="size-16 bg-white rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
+          <img src="images_caribe_fast_food/Logo/Logo_insta.jpg" alt="Logo Caribe" class="w-full h-full object-contain p-3"/>
+        </div>
+        <span class="text-white font-black text-2xl tracking-tighter">FOOD PRO STUDIO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-16 border-t border-white/5 px-8">
+  <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+    <a href="#portada" class="flex items-center gap-4">
+      <div class="size-8 rounded-lg flex items-center justify-center">
+        <svg class="logo-svg size-6 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.37 506.61"><defs><style>.cls-1{fill:#e5087e;}.cls-1,.cls-2{stroke:#000;stroke-miterlimit:10;stroke-width:0.25px;}.cls-2,.cls-3{fill:#fff;}</style></defs><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path class="cls-1" d="M237.21,143.4q-55.71,0-111.42,0-52.33,0-104.67-.09c-10.53,0-11.46-1.38-9.55-11.87C15.78,108.19,28.65,89.87,44,72.71,64.53,49.61,90.83,35,118.61,23,147.14,10.61,177.43,4.62,208.3,1.69c45.48-4.31,90.08.14,133.31,15.12,24.31,8.43,47.53,19.37,68,35.33,15.61,12.18,29.47,26,40.24,42.83a106.35,106.35,0,0,1,15.42,40.92c.78,4.82-.49,6.34-5.26,7.14a24.31,24.31,0,0,1-3.72.25q-38.15.12-76.27.2-66.91.09-133.84.12h-9Z"/><path class="cls-2" d="M129.8,67.55c5.75-1.34,12.07-3.1,16.35-8.42,1.34-1.67,2.44-5,1.64-6.53s-4.11-2.68-6.3-2.64c-7.56.14-13.18,4.12-17,10.49C122,64.62,124.2,67.72,129.8,67.55Z"/><path class="cls-1" d="M290.14,85.23c-5.13.13-7.25,3.35-4.7,7.89,3.58,6.39,9.55,9.95,16.49,11.59,3.61.84,5.9-2.2,5.19-6.06C306,92.41,296.69,85.08,290.14,85.23Z"/><path class="cls-1" d="M192.11,90.72c-.13-4.29-1.87-5.66-5.63-5.58-6.14.14-15.24,7.07-17,12.94-1.39,4.67,1.18,7.78,5.71,6.44,5.53-1.64,10.75-4.11,14.31-8.94A31.39,31.39,0,0,0,192.11,90.72Z"/><path class="cls-1" d="M238.9,50.8c3.8-1.41,7.65-2.35,11-4.22,3-1.69,2.83-4.5.34-6.72-4.78-4.25-16.36-4.86-21.8-1.15-3.68,2.5-4,6-.13,8.21C231.37,48.7,235.05,49.44,238.9,50.8Z"/><path class="cls-1" d="M348,67.16c1-.53,3.42-1,4.16-2.39s.31-4-.58-5.42c-3.6-5.9-9.3-8.73-16-9.58-2.56-.33-5.6.08-6.13,2.87a8.7,8.7,0,0,0,1.89,6.59C335.43,63.78,341.05,65.88,348,67.16Z"/><path class="cls-1" d="M239.16,359.23H459c12.83-.49,14.79,3.7,9.5,15.51a61.62,61.62,0,0,1-14.75,20.5A168.59,168.59,0,0,1,422.39,418c-33,18.52-65.9,37.23-99,55.64-15,8.35-29.93,16.92-45.51,24.06-27.46,12.6-55.38,11.2-82.39-1.42-15.75-7.36-30.67-16.53-45.9-25-29.81-16.57-59.38-33.6-89.46-49.69-14.42-7.72-27.86-16.41-39.26-28.15C14.59,387,9.29,379.74,6.46,371s-.76-11.65,8.35-11.74c19.19-.21,38.39-.16,57.58-.16q83.39,0,166.77,0Z"/><path class="cls-1" d="M284.46,164.29h7.2c33.6-.07,67.21-.22,100.81-.16,21.15,0,42.31.36,63.47.55A19,19,0,0,1,470,170.59c5.16,5.38,7.55,11.69,4.76,19.12-3.24,8.64-9.89,13.07-18.76,13.63-8.43.54-16.93.16-25.39.16-33.37,0-66.75-.14-100.11.09-6.07,0-10.19-1.55-13.59-6.83a84.79,84.79,0,0,0-30.7-28.87,15.85,15.85,0,0,1-2.19-1.75C284.17,165.52,284.31,164.9,284.46,164.29Z"/><path class="cls-1" d="M194.83,340.33c-4,.4-6.3.84-8.64.84q-70.29,0-140.6-.09c-6.23,0-12.47.07-18.69-.13a66.89,66.89,0,0,1-11.13-1.14C5.41,337.68-.38,330.23.16,320.16c.51-9.48,7.8-16.87,18-17.64,7.2-.55,14.45-.61,21.68-.61,36.14,0,72.29.13,108.43.14,3.91,0,7.15.31,9.49,4.26,7.68,13,18.54,22.66,31.82,29.73C191,336.8,192.15,338.1,194.83,340.33Z"/><path class="cls-1" d="M193.48,166.07c-1.76,1.24-3.43,2.62-5.28,3.69a84.56,84.56,0,0,0-29,27.46c-3.12,4.8-6.89,6.38-12.4,6.34-36.36-.22-72.72-.21-109.08-.25-6,0-12,.44-17.92.08-14.06-.87-22-12.39-18-25.6C4.18,170,9.71,166,17.55,164.94a64.12,64.12,0,0,1,8.21-.3q57.51,0,115,0c14.94,0,29.88-.33,44.82-.46,2.45,0,4.89.22,7.34.34Z"/><path class="cls-1" d="M283.13,339c1.79-1.2,3.49-2.57,5.38-3.58,12.62-6.78,22.4-16.6,30-28.57,2.2-3.49,4.62-4.56,8.46-4.56q64.31.15,128.62.1c8.91,0,15.36,4.11,18.93,12.1,3.13,7,1.85,13.82-3.25,19.49-4.76,5.3-11.12,7.22-18.18,7.22q-39.26,0-78.53.07-41.5,0-83,0c-2.64,0-5.27-.26-7.9-.39Z"/><path class="cls-1" d="M140.06,233.14v38.49a32.1,32.1,0,0,1-5.18.78q-56.38.06-112.78,0a25.86,25.86,0,0,1-6.59-1c-10.9-3-16.32-10.47-15.18-20.68,1.11-9.95,8.5-16.75,19.34-17.09C34.1,233.19,48.54,233,63,233c21.16-.06,42.31.11,63.47.17C130.62,233.15,134.8,233.14,140.06,233.14Z"/><path class="cls-1" d="M336.45,272.12V234.54a10.88,10.88,0,0,1,3.24-1c39.33-.05,78.67-.3,118,.11,15.27.16,23.53,16.47,15.33,29.17-4.23,6.57-10.82,9.36-18.43,9.55-8,.21-15.94.08-23.9.09q-43.69,0-87.4.07C341.1,272.48,338.9,272.26,336.45,272.12Z"/><path class="cls-1" d="M316.35,210.6c2.17,5.08,4.16,9.26,5.77,13.59,7.77,20.8,6.18,41.35-1.62,61.8-1.63,4.25-3.83,6.21-8.67,6.09-13.16-.33-26.34-.12-39.51-.16-1.45,0-2.9-.27-5.4-.52a63.88,63.88,0,0,1,3.1-7q21.06-34.69,42.28-69.3C313.14,213.76,314.47,212.68,316.35,210.6Z"/><path class="cls-1" d="M285,246.68c-16.27-27.46-32-53.18-46.7-80.41,7.11-2.28,13.26-.55,19,.7,21.23,4.63,38.07,16.47,51.56,33.3,1.61,2,2.94,4,1.26,6.7C302.05,219.75,294,232.53,285,246.68Z"/><path class="cls-1" d="M236.89,339.76c-30.5-1.44-53.74-14.59-72-38.76l25.21-42.12C195.29,262.94,234.37,330.68,236.89,339.76Z"/><path class="cls-1" d="M209.09,214.28c-15.51,27.21-31.17,53.49-47.71,80.41-1.68-2.24-2.77-3.25-3.33-4.5-10.65-23.67-11.37-47.56-1.44-71.65,1.3-3.14,2.95-5.63,7-5.6,13.69.1,27.38,0,41.07.11C205.78,213.05,206.9,213.65,209.09,214.28Z"/><path class="cls-1" d="M313.33,298.55c-2.63,3.75-4.2,6.83-6.53,9.18-9.47,9.54-19.22,19-31.86,24.12-7.74,3.16-16.08,4.88-24.24,6.89a6.39,6.39,0,0,1-5.07-1.68c-4.28-4.36-19.74-32.05-21.78-38.51Z"/><path class="cls-1" d="M164.56,206c1.88-2.84,3.05-5,4.56-6.84,13.47-16.53,30-28.17,51.36-32.21,8.12-1.54,8.87-1.37,13.23,5.87,5.78,9.59,11.39,19.28,17,28.95a26.56,26.56,0,0,1,1.4,3.33C247.43,206.92,177.83,207.72,164.56,206Z"/><path class="cls-2" d="M290.14,85.23c6.55-.15,15.83,7.18,17,13.42.71,3.86-1.58,6.9-5.19,6.06-6.94-1.64-12.91-5.2-16.49-11.59C282.89,88.58,285,85.36,290.14,85.23Z"/><path class="cls-2" d="M192.11,90.72a31.39,31.39,0,0,1-2.6,4.86c-3.56,4.83-8.78,7.3-14.31,8.94-4.53,1.34-7.1-1.77-5.71-6.44,1.75-5.87,10.85-12.8,17-12.94C190.24,85.06,192,86.43,192.11,90.72Z"/><path class="cls-2" d="M238.9,50.8c-3.85-1.36-7.53-2.1-10.62-3.88-3.84-2.2-3.55-5.71.13-8.21,5.44-3.71,17-3.1,21.8,1.15,2.49,2.22,2.65,5-.34,6.72C246.55,48.45,242.7,49.39,238.9,50.8Z"/><path class="cls-3" d="M348,67.16c-6.92-1.28-12.54-3.38-16.67-7.93a8.7,8.7,0,0,1-1.89-6.59c.53-2.79,3.57-3.2,6.13-2.87,6.71.85,12.41,3.68,16,9.58.89,1.46,1.3,4.06.58,5.42S349,66.63,348,67.16Z"/></g></g></svg>
+      </div>
+      <h2 class="text-white text-lg font-black tracking-tighter">FOOD PRO STUDIO</h2>
+    </a>
+    <p class="text-gray-500 font-medium">© 2024 FOOD PRO STUDIO. Transforma tu delivery hoy.</p>
+    <div class="flex gap-8">
+      <a class="text-gray-400 hover:text-primary transition-colors" href="#contacto"><span class="material-symbols-outlined text-3xl">chat</span></a>
+      <a class="text-gray-400 hover:text-primary transition-colors" href="#galeria"><span class="material-symbols-outlined text-3xl">photo_camera</span></a>
+      <a class="text-gray-400 hover:text-primary transition-colors" href="#precios"><span class="material-symbols-outlined text-3xl">sell</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      const el = document.querySelector(href);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  // LOGICA DEL SLIDER ANTES/DESPUÉS MEJORADA
+  const container = document.getElementById("comparison-container");
+  const sliderBottom = document.getElementById("slider-bottom"); // El visible abajo
+  const sliderOverlay = document.getElementById("slider-overlay"); // El invisible encima
+  const beforeWrap = document.getElementById("beforeWrap");
+  const beforeImage = document.getElementById("beforeImage");
+  const handle = document.getElementById("handle");
+
+  // Función para actualizar posiciones
+  function updateSlider(val) {
+    // Sincronizar inputs
+    if(sliderBottom) sliderBottom.value = val;
+    if(sliderOverlay) sliderOverlay.value = val;
+
+    // Actualizar visuales
+    const pct = val + "%";
+    if(beforeWrap) beforeWrap.style.width = pct;
+    if(handle) handle.style.left = pct;
+  }
+
+  // Event Listeners sincronizados
+  if(sliderBottom) sliderBottom.addEventListener("input", (e) => updateSlider(e.target.value));
+  if(sliderOverlay) sliderOverlay.addEventListener("input", (e) => updateSlider(e.target.value));
+
+  // Lógica Anti-Squish (Evita que la imagen se aplaste)
+  // Forzamos que la imagen interior tenga el mismo ancho que el contenedor padre
+  function resizeBeforeImage() {
+    if(container && beforeImage) {
+      beforeImage.style.width = container.offsetWidth + "px";
+    }
+  }
+
+  // Ejecutar al cargar y al redimensionar ventana
+  window.addEventListener("resize", resizeBeforeImage);
+  
+  // Inicialización
+  resizeBeforeImage();
+  updateSlider(50); // Empezar al 50%
+</script>
+
+</body>
+</html>
