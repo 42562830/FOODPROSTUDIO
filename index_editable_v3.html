@@ -82,7 +82,24 @@
       50%{ transform:translateX(calc(-50% + 14px)) translateY(0); opacity:1; }
     }
 
-  </style>
+  
+  /* Preview widths (simula responsive sin tocar el HTML) */
+  @media (min-width: 1024px){
+    body.fp-preview-mobile #fp-canvas,
+    body.fp-preview-tablet #fp-canvas{
+      margin-left: calc(var(--fp-side-w) + 24px) !important;
+      margin-top: 16px;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      overflow: clip;
+      outline: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 20px 90px rgba(0,0,0,.55);
+      background: rgb(var(--c-bg));
+    }
+    body.fp-preview-mobile #fp-canvas{ max-width: 420px; }
+    body.fp-preview-tablet #fp-canvas{ max-width: 820px; }
+  }
+</style>
 <style id="fp-editor-style">
   :root{
     --c-primary: 255 0 127;
@@ -485,7 +502,7 @@
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/01_la_caribeña/00_original.png"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover" src="images_caribe_fast_food/01_la_caribeña/00_original.png"/>
             </div>
           </div>
 
@@ -554,7 +571,7 @@
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/02_la_clasica/00_original.png"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover" src="images_caribe_fast_food/02_la_clasica/00_original.png"/>
             </div>
           </div>
 
@@ -618,7 +635,7 @@
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/03_salchipapa_caribeña/00_original.png"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover" src="images_caribe_fast_food/03_salchipapa_caribeña/00_original.png"/>
             </div>
           </div>
 
@@ -691,7 +708,7 @@
           <div class="min-w-[320px] flex flex-col gap-4 snap-center">
             <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">ANTES (móvil)</span>
             <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden group border border-white/5">
-              <img alt="Antes móvil" class="w-full h-full object-cover grayscale opacity-70" src="images_caribe_fast_food/04_hot_dog/00_original.png"/>
+              <img alt="Antes móvil" class="w-full h-full object-cover" src="images_caribe_fast_food/04_hot_dog/00_original.png"/>
             </div>
           </div>
 
@@ -739,13 +756,7 @@
             </div>
           </div>
 
-          <div class="min-w-[320px] flex flex-col gap-4 snap-center">
-            <span class="text-gray-500 font-black text-xs uppercase tracking-widest text-center">VÍDEO RECURSO</span>
-            <div class="aspect-[9/16] bg-card-dark rounded-2xl relative overflow-hidden border border-white/10">
-              <video class="w-full h-full object-cover" controls playsinline preload="metadata"
-                     src="images_caribe_fast_food/04_hot_dog/07_Vídeo_de_recurso_o_extra.mp4"></video>
-            </div>
-          </div>
+          
 
         </div>
       </div>
@@ -913,7 +924,7 @@
          style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
 
     <div class="relative z-10 flex flex-col gap-7 items-center">
-      <h2 class="text-white text-6xl lg:text-7xl font-black tracking-tighter mb-4 leading-none">HABLEMOS!</h2>
+      <h2 class="text-white text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter mb-4 leading-tight">HABLEMOS!</h2>
 
       <div class="bg-white/20 backdrop-blur-md rounded-2xl px-10 py-6 border border-white/20">
         <p class="text-white text-2xl lg:text-3xl font-black italic">
@@ -1056,6 +1067,15 @@
     <!-- CONTENIDO (SAFE) -->
     <section class="fp-sec" data-fp-panel="contenido">
       <h3>Bloques</h3>
+
+      <div class="fp-row" style="align-items:center; justify-content:space-between; margin: 10px 0 12px 0;">
+        <label style="margin:0;">Vista</label>
+        <select id="fp-preview" style="width:190px;">
+          <option value="desktop" selected>Desktop</option>
+          <option value="tablet">Tablet</option>
+          <option value="mobile">Móvil</option>
+        </select>
+      </div>
       <div id="fp-blocks" class="fp-col"></div>
     </section>
 
@@ -1242,6 +1262,19 @@
   }
   tabs.forEach(t=>t.addEventListener('click', ()=>showTab(t.dataset.fpTab)));
 
+  // Preview selector (desktop/tablet/mobile)
+  const previewSel = $('#fp-preview');
+  function applyPreview(){
+    document.body.classList.remove('fp-preview-mobile','fp-preview-tablet');
+    const v = previewSel ? previewSel.value : 'desktop';
+    if(v === 'mobile') document.body.classList.add('fp-preview-mobile');
+    if(v === 'tablet') document.body.classList.add('fp-preview-tablet');
+  }
+  if(previewSel){
+    previewSel.addEventListener('change', applyPreview);
+    applyPreview();
+  }
+
   // Mobile drawer
   function openDrawer(){ document.body.classList.add('fp-drawer-open'); }
   function closeDrawer(){ document.body.classList.remove('fp-drawer-open'); }
@@ -1350,8 +1383,459 @@
     if(v.load) v.load();
   }
 
-  function renderBlockEditor(model){
+  
+  // =========================
+  // GALERÍAS (safe manager)
+  // Permite editar TODAS las galerías dentro de la sección #galeria:
+  // - cambiar textos/labels
+  // - reemplazar imágenes y vídeos (URL o upload -> assets/)
+  // - añadir/eliminar/reordenar items
+  // - añadir/eliminar/duplicar galerías completas
+  // =========================
+  let fpGalleryState = { idx: 0 };
+
+  function fpGetGalleryWrappers(section){
+    const carousels = Array.from(section.querySelectorAll('.js-carousel'));
+    const wrappers = carousels.map(c => c.closest('div.mb-24, div.mb-10') || c.parentElement);
+    // Deduplicate while preserving order
+    const uniq = [];
+    const seen = new Set();
+    wrappers.forEach(w=>{
+      if(!w) return;
+      if(seen.has(w)) return;
+      seen.add(w);
+      uniq.push(w);
+    });
+    return uniq;
+  }
+
+  function fpGetCarousel(wrapper){
+    return wrapper ? wrapper.querySelector('.js-carousel') : null;
+  }
+
+  function fpGetGalleryTitleEl(wrapper){
+    // Prefer the nearest h3 inside wrapper, else any heading
+    return wrapper ? (wrapper.querySelector('h3') || wrapper.querySelector('h2,h4')) : null;
+  }
+
+  function fpGetItems(carousel){
+    if(!carousel) return [];
+    return Array.from(carousel.children).filter(n => n.nodeType === 1);
+  }
+
+  function fpGetItemLabelEl(item){
+    if(!item) return null;
+    // The card label is usually the first span with uppercase tracking
+    return item.querySelector('span') || null;
+  }
+
+  function fpGetItemMediaEl(item){
+    if(!item) return null;
+    return item.querySelector('img,video,source') || null;
+  }
+
+  function fpGetVideoSrc(video){
+    const s = video.querySelector && video.querySelector('source');
+    return (s && s.getAttribute('src')) || video.getAttribute('src') || '';
+  }
+
+  function fpSetVideoSrc(video, src){
+    const s = video.querySelector && video.querySelector('source');
+    if(s) s.setAttribute('src', src);
+    video.setAttribute('src', src);
+    if(video.load) video.load();
+  }
+
+  function fpMakeRelAssetPath(file){
+    const ts = Date.now();
+    const fname = `${ts}_${safeName(file.name)}`;
+    return `assets/${fname}`;
+  }
+
+  function fpMakeButton(text, cls='fp-btn'){
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = cls;
+    b.textContent = text;
+    return b;
+  }
+
+  function fpMakeDivider(){
+    const d = document.createElement('div');
+    d.style.height = '1px';
+    d.style.background = 'rgba(255,255,255,.10)';
+    d.style.margin = '8px 0';
+    return d;
+  }
+
+  function fpRenderGalleriesUI(model){
+    // Only safe editing for gallery section
+    const section = model.sec;
+    const wrappers = fpGetGalleryWrappers(section);
+
     blockEditor.innerHTML = '';
+
+    if(!wrappers.length){
+      const note = document.createElement('div');
+      note.style.cssText = 'font-size:12px;color:rgba(255,255,255,.82);line-height:1.4;';
+      note.textContent = 'No se han detectado galerías (.js-carousel) en esta sección.';
+      blockEditor.appendChild(note);
+      return;
+    }
+
+    // Header
+    const head = document.createElement('div');
+    head.style.cssText = 'font-size:12px;color:rgba(255,255,255,.85);line-height:1.4;';
+    head.innerHTML = `<b>${model.name}</b> — gestor de 4 galerías (editar, añadir, eliminar).`;
+    blockEditor.appendChild(head);
+
+    // Gallery selector
+    const selWrap = document.createElement('div');
+    selWrap.className = 'fp-col';
+    const lbl = document.createElement('label');
+    lbl.textContent = 'Elegir galería';
+    selWrap.appendChild(lbl);
+
+    const sel = document.createElement('select');
+    sel.style.width = '100%';
+
+    wrappers.forEach((w, i)=>{
+      const titleEl = fpGetGalleryTitleEl(w);
+      const title = titleEl ? titleEl.textContent.trim() : `Galería ${i+1}`;
+      const opt = document.createElement('option');
+      opt.value = String(i);
+      opt.textContent = `${i+1} · ${title || 'Galería'}`;
+      sel.appendChild(opt);
+    });
+
+    // Keep state
+    fpGalleryState.idx = Math.max(0, Math.min(fpGalleryState.idx, wrappers.length-1));
+    sel.value = String(fpGalleryState.idx);
+
+    sel.addEventListener('change', ()=>{
+      fpGalleryState.idx = parseInt(sel.value, 10) || 0;
+      fpRenderGalleriesUI(model); // re-render (safe and simple)
+    });
+
+    selWrap.appendChild(sel);
+
+    // Actions row
+    const actions = document.createElement('div');
+    actions.className = 'fp-row';
+    actions.style.flexWrap = 'wrap';
+
+    const btnDup = fpMakeButton('Duplicar galería', 'fp-btn');
+    const btnNew = fpMakeButton('Nueva galería (vacía)', 'fp-btn');
+    const btnDel = fpMakeButton('Eliminar galería', 'fp-btn fp-btn-danger');
+
+    actions.appendChild(btnDup);
+    actions.appendChild(btnNew);
+    actions.appendChild(btnDel);
+
+    selWrap.appendChild(actions);
+    selWrap.appendChild(fpMakeDivider());
+    blockEditor.appendChild(selWrap);
+
+    // Active wrapper
+    const wrapper = wrappers[fpGalleryState.idx];
+
+    // Clean outlines and outline active wrapper
+    wrappers.forEach(w=>w.classList.remove('fp-outline'));
+    wrapper.classList.add('fp-outline');
+
+    // Title edit
+    const titleEl = fpGetGalleryTitleEl(wrapper);
+    const titleBlock = document.createElement('div');
+    titleBlock.className = 'fp-col';
+    const titleLabel = document.createElement('label');
+    titleLabel.textContent = 'Título de esta galería';
+    titleBlock.appendChild(titleLabel);
+
+    const titleInput = document.createElement('input');
+    titleInput.type = 'text';
+    titleInput.value = titleEl ? titleEl.textContent.trim() : '';
+    titleInput.placeholder = 'Ej: CLIENTE CARIBE FAST FOOD';
+    titleInput.addEventListener('input', ()=>{
+      if(titleEl) titleEl.textContent = titleInput.value;
+    });
+    titleBlock.appendChild(titleInput);
+
+    const gotoTitle = fpMakeButton('Ir al título', 'fp-btn');
+    gotoTitle.addEventListener('click', ()=>{
+      (titleEl || wrapper).scrollIntoView({behavior:'smooth', block:'center'});
+    });
+    titleBlock.appendChild(gotoTitle);
+    titleBlock.appendChild(fpMakeDivider());
+    blockEditor.appendChild(titleBlock);
+
+    // Items editor
+    const carousel = fpGetCarousel(wrapper);
+    const items = fpGetItems(carousel);
+
+    const itemsHead = document.createElement('div');
+    itemsHead.style.cssText = 'font-size:11px;color:rgba(255,255,255,.65);letter-spacing:.14em;text-transform:uppercase;font-weight:900;margin-top:4px;';
+    itemsHead.textContent = `Items (${items.length})`;
+    blockEditor.appendChild(itemsHead);
+
+    // Add item buttons
+    const addRow = document.createElement('div');
+    addRow.className = 'fp-row';
+    addRow.style.flexWrap = 'wrap';
+    const addImg = fpMakeButton('+ Añadir imagen', 'fp-btn fp-btn-primary');
+    const addVid = fpMakeButton('+ Añadir vídeo', 'fp-btn fp-btn-primary');
+
+    addRow.appendChild(addImg);
+    addRow.appendChild(addVid);
+    blockEditor.appendChild(addRow);
+
+    const list = document.createElement('div');
+    list.className = 'fp-col';
+    list.style.marginTop = '10px';
+    blockEditor.appendChild(list);
+
+    function renderItemCard(item, index){
+      const card = document.createElement('div');
+      card.className = 'fp-sec';
+      card.style.marginTop = '0';
+      card.style.padding = '10px';
+
+      const mediaEl = fpGetItemMediaEl(item);
+      const isVideo = mediaEl && (mediaEl.tagName === 'VIDEO' || (mediaEl.tagName === 'SOURCE' && item.querySelector('video')));
+      const type = isVideo ? 'Vídeo' : 'Imagen';
+
+      const top = document.createElement('div');
+      top.style.display = 'flex';
+      top.style.alignItems = 'center';
+      top.style.justifyContent = 'space-between';
+      top.style.gap = '10px';
+
+      const t = document.createElement('div');
+      t.innerHTML = `<div style="font-weight:900;">${type} ${index+1}</div><div style="font-size:11px;color:rgba(255,255,255,.60);">Reemplazar sin romper diseño</div>`;
+      top.appendChild(t);
+
+      const controls = document.createElement('div');
+      controls.className = 'fp-row';
+      controls.style.flexWrap = 'wrap';
+      controls.style.justifyContent = 'flex-end';
+
+      const up = fpMakeButton('↑', 'fp-btn');
+      const down = fpMakeButton('↓', 'fp-btn');
+      const del = fpMakeButton('Eliminar', 'fp-btn fp-btn-danger');
+      const go = fpMakeButton('Ir', 'fp-btn');
+
+      controls.appendChild(up);
+      controls.appendChild(down);
+      controls.appendChild(del);
+      controls.appendChild(go);
+      top.appendChild(controls);
+
+      card.appendChild(top);
+
+      // Label
+      const labelEl = fpGetItemLabelEl(item);
+      const labelLbl = document.createElement('label');
+      labelLbl.textContent = 'Texto del item (ANTES / FOTO PRO / VÍDEO...)';
+      card.appendChild(labelLbl);
+
+      const labelInput = document.createElement('input');
+      labelInput.type = 'text';
+      labelInput.value = labelEl ? labelEl.textContent.trim() : '';
+      labelInput.placeholder = 'Ej: FOTO PRO (móvil)';
+      labelInput.addEventListener('input', ()=>{
+        if(labelEl) labelEl.textContent = labelInput.value;
+      });
+      card.appendChild(labelInput);
+
+      // Src + upload
+      const srcLbl = document.createElement('label');
+      srcLbl.textContent = 'Ruta/URL del media (src)';
+      card.appendChild(srcLbl);
+
+      const srcInput = document.createElement('input');
+      srcInput.type = 'url';
+
+      if(isVideo){
+        const v = item.querySelector('video') || (mediaEl.tagName === 'VIDEO' ? mediaEl : null);
+        srcInput.value = v ? fpGetVideoSrc(v) : '';
+      }else{
+        const img = item.querySelector('img') || (mediaEl && mediaEl.tagName === 'IMG' ? mediaEl : null);
+        srcInput.value = img ? (img.getAttribute('src') || '') : '';
+      }
+
+      srcInput.placeholder = 'assets/mi-archivo... o https://...';
+      srcInput.addEventListener('input', ()=>{
+        const v = srcInput.value.trim();
+        if(!v) return;
+        if(isVideo){
+          const vv = item.querySelector('video');
+          if(vv) fpSetVideoSrc(vv, v);
+        }else{
+          const img = item.querySelector('img');
+          if(img) img.setAttribute('src', v);
+        }
+      });
+      card.appendChild(srcInput);
+
+      const upInput = document.createElement('input');
+      upInput.type = 'file';
+      upInput.accept = isVideo ? 'video/*' : 'image/*';
+      card.appendChild(upInput);
+
+      const apply = fpMakeButton('Subir y aplicar', 'fp-btn fp-btn-primary');
+      apply.addEventListener('click', async ()=>{
+        const file = upInput.files && upInput.files[0];
+        if(!file) return;
+        const relPath = fpMakeRelAssetPath(file);
+        assetStore.set(relPath, { blob: file, type: file.type || 'application/octet-stream' });
+
+        if(isVideo){
+          const vv = item.querySelector('video');
+          if(vv) fpSetVideoSrc(vv, relPath);
+          srcInput.value = relPath;
+        }else{
+          const img = item.querySelector('img');
+          if(img) img.setAttribute('src', relPath);
+          srcInput.value = relPath;
+        }
+        upInput.value = '';
+        alert('Listo: media actualizado. Exporta carpeta/ZIP para incluir assets/.');
+      });
+
+      card.appendChild(apply);
+
+      // Buttons
+      go.addEventListener('click', ()=> item.scrollIntoView({behavior:'smooth', block:'center'}));
+      del.addEventListener('click', ()=>{
+        if(confirm('¿Eliminar este item de la galería?')){
+          item.remove();
+          fpRenderGalleriesUI(model);
+        }
+      });
+      up.addEventListener('click', ()=>{
+        const prev = item.previousElementSibling;
+        if(prev) carousel.insertBefore(item, prev);
+        fpRenderGalleriesUI(model);
+      });
+      down.addEventListener('click', ()=>{
+        const next = item.nextElementSibling;
+        if(next) carousel.insertBefore(next, item);
+        fpRenderGalleriesUI(model);
+      });
+
+      return card;
+    }
+
+    items.forEach((item, i)=>{
+      list.appendChild(renderItemCard(item, i));
+    });
+
+    // Add item handlers
+    function cloneTemplate(kind){
+      // Try to find a template item of the requested kind
+      const all = fpGetItems(carousel);
+      let tpl = null;
+
+      if(kind === 'image'){
+        tpl = all.find(it => it.querySelector('img'));
+      }
+      if(kind === 'video'){
+        tpl = all.find(it => it.querySelector('video'));
+      }
+      // Fallback: first item
+      if(!tpl) tpl = all[0];
+
+      const clone = tpl.cloneNode(true);
+
+      // normalize label
+      const lbl = fpGetItemLabelEl(clone);
+      if(lbl) lbl.textContent = (kind === 'video') ? 'VÍDEO' : 'IMAGEN';
+
+      // clear media src
+      if(kind === 'video'){
+        // Ensure there's a video
+        let v = clone.querySelector('video');
+        if(!v){
+          // Replace img with video if needed
+          const img = clone.querySelector('img');
+          if(img) img.remove();
+          const holder = clone.querySelector('div') || clone;
+          v = document.createElement('video');
+          v.setAttribute('playsinline','');
+          v.setAttribute('muted','');
+          v.setAttribute('loop','');
+          v.setAttribute('autoplay','');
+          v.className = 'w-full h-full object-cover';
+          holder.appendChild(v);
+        }
+        fpSetVideoSrc(v, '');
+      }else{
+        let img = clone.querySelector('img');
+        if(!img){
+          // Replace video with img if needed
+          const v = clone.querySelector('video');
+          if(v) v.remove();
+          const holder = clone.querySelector('div') || clone;
+          img = document.createElement('img');
+          img.className = 'w-full h-full object-cover';
+          img.setAttribute('alt', 'Nueva imagen');
+          holder.appendChild(img);
+        }
+        img.setAttribute('src','');
+      }
+      return clone;
+    }
+
+    addImg.addEventListener('click', ()=>{
+      const clone = cloneTemplate('image');
+      carousel.appendChild(clone);
+      fpRenderGalleriesUI(model);
+      clone.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+
+    addVid.addEventListener('click', ()=>{
+      const clone = cloneTemplate('video');
+      carousel.appendChild(clone);
+      fpRenderGalleriesUI(model);
+      clone.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+
+    // Gallery actions
+    btnDup.addEventListener('click', ()=>{
+      const copy = wrapper.cloneNode(true);
+      wrapper.insertAdjacentElement('afterend', copy);
+      fpGalleryState.idx = fpGalleryState.idx + 1;
+      fpRenderGalleriesUI(model);
+    });
+
+    btnNew.addEventListener('click', ()=>{
+      const copy = wrapper.cloneNode(true);
+      // Clear title
+      const tEl = fpGetGalleryTitleEl(copy);
+      if(tEl) tEl.textContent = 'NUEVA GALERÍA';
+      // Clear media srcs
+      copy.querySelectorAll('img').forEach(im=>im.setAttribute('src',''));
+      copy.querySelectorAll('video').forEach(v=>fpSetVideoSrc(v,''));
+      copy.querySelectorAll('source').forEach(s=>s.setAttribute('src',''));
+      wrapper.insertAdjacentElement('afterend', copy);
+      fpGalleryState.idx = fpGalleryState.idx + 1;
+      fpRenderGalleriesUI(model);
+    });
+
+    btnDel.addEventListener('click', ()=>{
+      if(!confirm('¿Eliminar esta galería completa?')) return;
+      wrapper.remove();
+      fpGalleryState.idx = Math.max(0, fpGalleryState.idx - 1);
+      fpRenderGalleriesUI(model);
+    });
+  }
+function renderBlockEditor(model){
+    blockEditor.innerHTML = '';
+
+    // Special case: Galerías (4 carousels) — editable completo
+    if(model && model.sec && (model.sec.id === 'galeria' || model.name === 'Galería')){
+      fpRenderGalleriesUI(model);
+      return;
+    }
 
     // Header
     const head = document.createElement('div');
